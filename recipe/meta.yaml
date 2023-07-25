@@ -1,5 +1,5 @@
 {% set name = "sliceable-dict" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: 3a47bdd8376bf51d9bf9a21fa08446c376c0b130f2fb8629031e974c6bfa397b
+  sha256: 4b70465c66a857418b5b01f8d7a4492ccc278cba5d994ecb7a37a42994639f83
 
 build:
   noarch: python
