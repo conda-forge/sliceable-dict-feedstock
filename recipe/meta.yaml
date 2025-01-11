@@ -6,23 +6,25 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace("-", "_") }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace("-", "_") }}-{{ version }}.tar.gz
   sha256: 4b70465c66a857418b5b01f8d7a4492ccc278cba5d994ecb7a37a42994639f83
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - typing_extensions
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - sliceable_dict
 
